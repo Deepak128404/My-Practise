@@ -66,3 +66,9 @@ console.log(home.length);
 let cloneHome = home.split()
 console.log(cloneHome);
 console.log(typeof cloneHome[0]);
+
+let x = null;
+x === null;        // true
+x == undefined   // true (loose equality)
+x === undefined;   // false
+
