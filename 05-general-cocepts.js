@@ -43,3 +43,5 @@
 
 // u2.greet()
 // u3.greet()
+global.version = "first v1"
+console.log(globalThis.version)
