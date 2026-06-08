@@ -106,8 +106,13 @@ setTimeout(() => {
   resolve(`Sasuke retrieval in progress with help: ${backupTeams}`);
 }, 2000);
 
-promise.then((result) => {
-  console.log(result);
-//output
-  // "Sasuke retrieval in progress with help: Shikamaru, Choji, Kiba, Hinata arrived to help!"
-});
+// promise.then((result) => {
+//   console.log(result);
+// //output
+//   // "Sasuke retrieval in progress with help: Shikamaru, Choji, Kiba, Hinata arrived to help!"
+// });
+
+promise.then(console.log) // passing the reference, then will insert the value 
+
+
+

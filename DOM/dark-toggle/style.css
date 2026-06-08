@@ -1,0 +1,14 @@
+.dark{
+    background-color: #191919;
+    color: white;
+}
+
+.dark button{
+    background-color: white;
+    color: darkblue;
+}
+
+button{
+    background-color: black;
+    color: greenyellow;
+}

@@ -1,0 +1,128 @@
+:root {
+    /* Soft, calm background colors */
+    --bg-color: #eef2f6;
+    --card-bg: rgba(255, 255, 255, 0.7);
+    --text-color: #1e293b;
+    --accent: #6366f1;
+    --accent-glow: rgba(99, 102, 241, 0.2);
+    --border: rgba(255, 255, 255, 0.5);
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    /* Organic mesh gradient effect */
+    background-image: 
+        radial-gradient(at 0% 0%, #dbeafe 0px, transparent 50%),
+        radial-gradient(at 100% 100%, #fef3c7 0px, transparent 50%);
+    background-attachment: fixed;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4rem 1rem;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* --- Instructional UI --- */
+body::before {
+    content: "ToDo ☑️";
+    font-size: 0.65rem;
+    color: #64748b;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    font-weight: 800;
+}
+
+/* --- Input Area --- */
+div:first-of-type {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+    background: var(--card-bg);
+    padding: 0.75rem;
+    border-radius: 16px;
+    backdrop-filter: blur(10px); /* Glass effect */
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+input {
+    padding: 0.8rem 1.2rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    width: 250px;
+    outline: none;
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+input:focus { 
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-glow);
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s, filter 0.2s;
+}
+
+button:hover { 
+    filter: brightness(1.1);
+    transform: scale(1.02);
+}
+
+/* --- List Styling --- */
+ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-width: 400px;
+    counter-reset: todo-counter; 
+}
+
+li {
+    background: var(--card-bg);
+    backdrop-filter: blur(4px);
+    margin-bottom: 1rem;
+    padding: 1.2rem 1.2rem 1.2rem 3.5rem;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    outline: none;
+    counter-increment: todo-counter; 
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+}
+
+li::before {
+    content: counter(todo-counter);
+    position: absolute;
+    left: 1.2rem;
+    color: #94a3b8;
+    font-weight: 900;
+    font-size: 0.8rem;
+}
+
+li:hover {
+    border-color: var(--accent);
+    transform: translateX(8px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+/* Edit Mode Visual Feedback */
+li:focus {
+    background: #ffffff;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-glow);
+    cursor: text;
+}

@@ -1,0 +1,1 @@
+// rgb random values and show on a div with background color
